@@ -1,0 +1,23 @@
+#!/bin/bash
+
+sudo apt update && sudo apt upgrade -y
+
+function install {
+  if dpkg -l $1 &> /dev/null; then
+    echo "Already installed: ${1}"
+  else
+    echo "Installing: ${1}..."
+    sudo apt-get install -y $1
+  fi
+}
+
+install gnome-mines
+install kpat
+install flameshot
+install mpv
+install feh
+install kreversi
+install i3
+install gdb
+install codeblocks
+install artha
